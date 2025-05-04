@@ -6,57 +6,59 @@ function ExperienceTimeline() {
     {
       company: (
         <>
-          <RoughHighlight typeBox="box" color="#2E2E2E" strokeWidth={2}>
-            North Carolina State University
-          </RoughHighlight>
+          {/* <RoughHighlight typeBox="box" color="#2E2E2E" strokeWidth={2}> */}
+          SAS
+          {/* </RoughHighlight> */}
         </>
       ),
-      role: "Undergraduate Researcher",
+      role: "Reliability Engineer for IoT Systems",
+      location: "Raleigh, NC",
+      duration: "May 2025",
+      description: [
+        <>[Upcoming]</>
+      ],
+    },
+    {
+      company: (
+        <>
+          {/* <RoughHighlight typeBox="box" color="#2E2E2E" strokeWidth={2}> */}
+            Yoon's Lab
+          {/* </RoughHighlight> */}
+        </>
+      ),
+      role: "Undergraduate Research On Self Driving Car",
       location: "Raleigh, NC",
       duration: "August 2023 - Present",
       description: [
-        "Conducting research under the supervision of Dr. Man-Ki Yoon at North Carolina State University.",
-        "Utilizing ROS2 and Python to develop a 1/16 scale self-driving car capable of lane-keeping, turning, and stop sign detection.",
-        <>
-          Currently working on{" "}
-          <RoughHighlight typeBox="underline" color="#2E2E2E" strokeWidth={2}>
-            publishing a paper focused on localization techniques.
-          </RoughHighlight>
-        </>,
-        "Implementing a two-step localization process using Faster R-CNN combined with a feedforward neural network (FFNN) to predict the car's location based solely on images.",
-        "Employing LiDAR technology for simultaneous localization and mapping (SLAM).",
+        <>Co-authored a research paper, "Q-Loc: Visual Cue-Based Ground Vehicle Localization Using LSTM" submitted to ICRA 2025, and developed a neural network model to improve GPS accuracy using varied GPS data.</>,
+        "Trained a YOLO-based model for real-time path detection and implemented an autonomous navigation algorithm \
+        to keep the vehicle on path while avoiding pedestrians and obstacles over 5 miles.",
+        // <>
+        //   Currently working on{" "}
+        //   <RoughHighlight typeBox="underline" color="#2E2E2E" strokeWidth={2}>
+        //     publishing a paper focused on localization techniques.
+        //   </RoughHighlight>
+        // </>,
+        "Employed LiDAR technology for simultaneous localization and mapping (SLAM).",
       ],
     },  
     {
       company: (
         <>
-          <RoughHighlight typeBox="box" color="#2E2E2E" strokeWidth={2}>
-            Self Employed
-          </RoughHighlight>
+            Engineering Information Technology at North Carolina State University(ITECS)
         </>
       ),
-      role: "Solopreneur",
-      location: "Remote",
-      duration: "Ongoing",
+      role: "Full Stack",
+      location: "Raleigh, NC",
+      duration: "August 2024 - Present",
       description: [
-        "Worked on full-scale projects from coding to production and deployment, handling all aspects of software development independently.",
+        "Designed and implemented full-stack applications using PHP, Vue.js, and HTML5/CSS3 to deliver cross-platform \
+        functionality, ensuring seamless experience for over 10,000 students on the Engineering Online platform.",
         <>
-          Successfully deployed two websites:{" "}
-          <a href="https://www.letsstudytogether.net/" target="_blank">
-            <RoughHighlight typeBox="underline" color="#2E2E2E" strokeWidth={2}>
-              www.letsstudytogether.net
-            </RoughHighlight>
-          </a>
-          , a platform designed to enhance study productivity, and{" "}
-          <a href="https://www.leetcodejournal.com/" target="_blank">
-            <RoughHighlight typeBox="underline" color="#2E2E2E" strokeWidth={2}>
-              www.leetCodejournal.com
-            </RoughHighlight>
-          </a>
-          , a tool for journaling LeetCode solutions.
+          Managed and resolved a critical bug in the Engineering Online backend that prevented instructors from being displayed as assignable options, ensuring seamless functionality for over 1,000 staff members.
         </>,
-        "Assisted individuals in creating their personal websites, providing guidance on design, development, and deployment.",
-        "Gained extensive experience in end-to-end software development, from initial concept to live production environments.",
+        "Spearheaded the successful rollback of a failed post-merge PR by coordinating with the on-call team, gaining \
+        valuable insights into effective communication and problem-solving in high-stakes situations.",
       ],
     },
   ];
@@ -67,13 +69,12 @@ function ExperienceTimeline() {
         <div className="text-4xl font-extrabold tracking-wide text-center mb-10">
           <RoughHighlight>my experience</RoughHighlight>
         </div>
-        <div className="relative scroll-animation border-l-4 border-custom-text-charcoal">
+        
           {experiences.map((exp, index) => (
             <div className="mb-10 ml-6" key={index}>
-              <div className="absolute w-6 h-6 bg-custom-text-charcoal rounded-full -left-3.5 top-1.5"></div>
-              <div className="absolute w-6 h-6 bg-custom-text-charcoal rounded-full -left-3.5"></div>
-              <div className="text-lg font-semibold">{exp.company}</div>
-              <div className="text-sm text-gray-600">
+              
+              <div className="text-2xl font-semibold">{exp.company}</div>
+              <div className="text-lg text-gray-600">
                 {exp.role} | {exp.location} | {exp.duration}
               </div>
               <ul className="list-disc pl-5 mt-2 text-gray-800">
@@ -92,7 +93,7 @@ function ExperienceTimeline() {
               )}
             </div>
           ))}
-        </div>
+        
       </div>
     </div>
   );

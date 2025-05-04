@@ -2,7 +2,7 @@ import React from "react";
 import Typewriter from "typewriter-effect";
 
 function Hero() {
-  const strings = ["Full Stack Development.", "Machine Learning."];
+  const strings = ["Full Stack Development.", "Machine Learning.", "Blockchain", "& Philosophy"];
   return (
     <>
       <div className="relative container mx-auto flex flex-row justify-between items-center min-h-screen px-4">

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-scroll";
+import { Link } from "react-router-dom";
 import { RoughNotation } from "react-rough-notation";
 
 function NavBar() {
@@ -18,7 +18,7 @@ function NavBar() {
       <div className="container mx-auto flex justify-center items-center px-4 py-2">
         <div className="flex space-x-14 tracking-widest items-center">
           <Link
-            to="hero"
+            to="/"
             smooth={true}
             duration={500}
             className="text-lg font-bold"
@@ -32,11 +32,12 @@ function NavBar() {
               animationDuration={1000}
               strokeWidth={3}
             >
-              home
+              Home
             </RoughNotation>
           </Link>
+          
           <Link
-            to="about"
+            to="/about"
             className="text-lg font-bold"
             smooth={true}
             duration={500}
@@ -50,47 +51,12 @@ function NavBar() {
               animationDuration={1000}
               strokeWidth={3}
             >
-              about
+              About
             </RoughNotation>
           </Link>
+
           <Link
-            to="project"
-            className="text-lg font-bold"
-            smooth={true}
-            duration={500}
-            onMouseEnter={() => handleMouseEnter("project")}
-            onMouseLeave={handleMouseLeave}
-          >
-            <RoughNotation
-              type="underline"
-              show={hoveredLink === "project"}
-              color="#2E2E2E"
-              animationDuration={1000}
-              strokeWidth={3}
-            >
-              projects
-            </RoughNotation>
-          </Link>
-          <Link
-            to="experience"
-            className="text-lg font-bold"
-            smooth={true}
-            duration={500}
-            onMouseEnter={() => handleMouseEnter("experience")}
-            onMouseLeave={handleMouseLeave}
-          >
-            <RoughNotation
-              type="underline"
-              show={hoveredLink === "experience"}
-              color="#2E2E2E"
-              animationDuration={1000}
-              strokeWidth={3}
-            >
-              experience
-            </RoughNotation>
-          </Link>
-          <Link
-            to="gallery"
+            to="/gallery"
             className="text-lg font-bold"
             smooth={true}
             duration={500}
@@ -104,9 +70,48 @@ function NavBar() {
               animationDuration={1000}
               strokeWidth={3}
             >
-              gallery
+              Visuals
             </RoughNotation>
           </Link>
+
+          <Link
+            to="/projects"
+            className="text-lg font-bold"
+            smooth={true}
+            duration={500}
+            onMouseEnter={() => handleMouseEnter("project")}
+            onMouseLeave={handleMouseLeave}
+          >
+            <RoughNotation
+              type="underline"
+              show={hoveredLink === "project"}
+              color="#2E2E2E"
+              animationDuration={1000}
+              strokeWidth={3}
+            >
+              Projects
+            </RoughNotation>
+          </Link>
+
+          <Link
+            to="/experience"
+            className="text-lg font-bold"
+            smooth={true}
+            duration={500}
+            onMouseEnter={() => handleMouseEnter("experience")}
+            onMouseLeave={handleMouseLeave}
+          >
+            <RoughNotation
+              type="underline"
+              show={hoveredLink === "experience"}
+              color="#2E2E2E"
+              animationDuration={1000}
+              strokeWidth={3}
+            >
+              Experience
+            </RoughNotation>
+          </Link>
+          
         </div>
       </div>
     </nav>

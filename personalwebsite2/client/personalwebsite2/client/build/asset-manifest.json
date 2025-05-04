@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/javascriptPersonalWebsite/static/css/main.c17ef106.css",
-    "main.js": "/javascriptPersonalWebsite/static/js/main.89fbe1be.js",
-    "static/js/453.d704c9f4.chunk.js": "/javascriptPersonalWebsite/static/js/453.d704c9f4.chunk.js",
-    "static/media/green-dust-and-scratches.png": "/javascriptPersonalWebsite/static/media/green-dust-and-scratches.08e71866fec4c4f5e84b.png",
-    "index.html": "/javascriptPersonalWebsite/index.html",
-    "main.c17ef106.css.map": "/javascriptPersonalWebsite/static/css/main.c17ef106.css.map",
-    "main.89fbe1be.js.map": "/javascriptPersonalWebsite/static/js/main.89fbe1be.js.map",
-    "453.d704c9f4.chunk.js.map": "/javascriptPersonalWebsite/static/js/453.d704c9f4.chunk.js.map"
+    "main.css": "/static/css/main.dc582104.css",
+    "main.js": "/static/js/main.ef3c2dc2.js",
+    "static/js/453.d704c9f4.chunk.js": "/static/js/453.d704c9f4.chunk.js",
+    "static/media/green-dust-and-scratches.png": "/static/media/green-dust-and-scratches.08e71866fec4c4f5e84b.png",
+    "index.html": "/index.html",
+    "main.dc582104.css.map": "/static/css/main.dc582104.css.map",
+    "main.ef3c2dc2.js.map": "/static/js/main.ef3c2dc2.js.map",
+    "453.d704c9f4.chunk.js.map": "/static/js/453.d704c9f4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c17ef106.css",
-    "static/js/main.89fbe1be.js"
+    "static/css/main.dc582104.css",
+    "static/js/main.ef3c2dc2.js"
   ]
 }
