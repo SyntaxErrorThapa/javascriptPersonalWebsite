@@ -56,3 +56,221 @@
     50% { border-color: #4CB3A5; }
   }
   
+  /* Project Content Styles - Add to your global CSS file */
+
+/* Styling for project descriptions */
+.project-description-content p {
+  @apply mb-4;
+}
+
+.project-description-content strong {
+  @apply font-semibold text-gray-800;
+}
+
+.project-description-content ul {
+  @apply list-disc pl-5 mb-4 space-y-2;
+}
+
+.project-description-content li {
+  @apply text-gray-600;
+}
+
+/* Make sure links inside project descriptions stand out */
+.project-description-content a {
+  @apply text-teal-600 hover:text-teal-800 underline;
+}
+
+/* Add smooth scrolling for the entire site */
+html {
+  @apply scroll-smooth;
+}
+
+/* Enhance featured project styling */
+.featured-project {
+  @apply border-l-4 border-teal-500 bg-gray-50;
+}
+
+/* For the Facial NN project specifically */
+.research-project li {
+  @apply mb-1;
+}
+
+.research-project ul {
+  @apply mb-4;
+}
+
+/* Animation for project cards on hover */
+.project-card {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+.project-card:hover {
+  @apply transform -translate-y-1 shadow-lg;
+}
+
+/* Custom animation for project image hover */
+.project-image {
+  @apply transition-transform duration-500 ease-in-out;
+}
+
+.project-card:hover .project-image {
+  @apply transform scale-105;
+}
+
+/* MasonryLayout.css - Add this to your global CSS or create a new CSS file */
+
+/* Grid layout enhancements */
+.masonry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-auto-rows: minmax(250px, auto);
+  grid-gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .masonry-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .masonry-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  .masonry-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Card style enhancements */
+.project-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Featured project styling */
+.featured-project {
+  grid-column: span 2;
+  border-left: 4px solid theme('colors.custom-text-coolTeal');
+}
+
+@media (max-width: 767px) {
+  .featured-project {
+    grid-column: span 1;
+  }
+}
+
+/* Card content positioning */
+.card-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-skills {
+  margin-top: auto;
+}
+
+/* Hover effects */
+.image-hover {
+  transition: transform 0.5s ease, filter 0.3s ease;
+  will-change: transform;
+}
+
+.project-card:hover .image-hover {
+  transform: scale(1.1);
+}
+
+/* Varying card heights */
+.height-sm {
+  grid-row: span 1;
+}
+
+.height-md {
+  grid-row: span 2;
+}
+
+.height-lg {
+  grid-row: span 3;
+}
+
+/* Different background colors for visual interest */
+.project-card:nth-child(4n+1) {
+  background-color: #ffffff;
+}
+
+.project-card:nth-child(4n+2) {
+  background-color: #f9fafb;
+}
+
+.project-card:nth-child(4n+3) {
+  background-color: #f0f9ff;
+}
+
+.project-card:nth-child(4n+4) {
+  background-color: #f0fdf4;
+}
+
+/* Scattered appearance helper classes */
+.offset-top-1 {
+  margin-top: 1rem;
+}
+
+.offset-top-2 {
+  margin-top: 2rem;
+}
+
+.offset-top-3 {
+  margin-top: 3rem;
+}
+
+.offset-bottom-1 {
+  margin-bottom: 1rem;
+}
+
+.offset-bottom-2 {
+  margin-bottom: 2rem;
+}
+
+.offset-bottom-3 {
+  margin-bottom: 3rem;
+}
+
+/* Animations for project cards */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.project-card {
+  animation: fadeInUp 0.5s ease forwards;
+  opacity: 0;
+}
+
+.project-card:nth-child(1) { animation-delay: 0.1s; }
+.project-card:nth-child(2) { animation-delay: 0.2s; }
+.project-card:nth-child(3) { animation-delay: 0.3s; }
+.project-card:nth-child(4) { animation-delay: 0.4s; }
+.project-card:nth-child(5) { animation-delay: 0.5s; }
+.project-card:nth-child(6) { animation-delay: 0.6s; }
+.project-card:nth-child(7) { animation-delay: 0.7s; }
+.project-card:nth-child(8) { animation-delay: 0.8s; }
+.project-card:nth-child(9) { animation-delay: 0.9s; }
+.project-card:nth-child(10) { animation-delay: 1.0s; }

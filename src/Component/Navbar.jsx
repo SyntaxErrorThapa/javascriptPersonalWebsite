@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-scroll";
+import { Link } from "react-router-dom";
 import { RoughNotation } from "react-rough-notation";
 
 function NavBar() {
@@ -18,7 +18,7 @@ function NavBar() {
       <div className="container mx-auto flex justify-center items-center px-4 py-2">
         <div className="flex space-x-14 tracking-widest items-center">
           <Link
-            to="hero"
+            to="/"
             smooth={true}
             duration={500}
             className="text-lg font-bold"
@@ -32,11 +32,12 @@ function NavBar() {
               animationDuration={1000}
               strokeWidth={3}
             >
-              home
+              Home
             </RoughNotation>
           </Link>
+          
           <Link
-            to="about"
+            to="/about"
             className="text-lg font-bold"
             smooth={true}
             duration={500}
@@ -50,11 +51,31 @@ function NavBar() {
               animationDuration={1000}
               strokeWidth={3}
             >
-              about
+              About
             </RoughNotation>
           </Link>
+
           <Link
-            to="project"
+            to="/gallery"
+            className="text-lg font-bold"
+            smooth={true}
+            duration={500}
+            onMouseEnter={() => handleMouseEnter("gallery")}
+            onMouseLeave={handleMouseLeave}
+          >
+            <RoughNotation
+              type="underline"
+              show={hoveredLink === "gallery"}
+              color="#2E2E2E"
+              animationDuration={1000}
+              strokeWidth={3}
+            >
+              Visuals
+            </RoughNotation>
+          </Link>
+
+          <Link
+            to="/projects"
             className="text-lg font-bold"
             smooth={true}
             duration={500}
@@ -68,11 +89,12 @@ function NavBar() {
               animationDuration={1000}
               strokeWidth={3}
             >
-              projects
+              Projects
             </RoughNotation>
           </Link>
+
           <Link
-            to="experience"
+            to="/experience"
             className="text-lg font-bold"
             smooth={true}
             duration={500}
@@ -86,9 +108,10 @@ function NavBar() {
               animationDuration={1000}
               strokeWidth={3}
             >
-              experience
+              Experience
             </RoughNotation>
           </Link>
+          
         </div>
       </div>
     </nav>

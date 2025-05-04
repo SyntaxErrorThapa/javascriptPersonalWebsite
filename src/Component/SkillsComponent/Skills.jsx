@@ -37,38 +37,38 @@ function Skills() {
       {/* Skills section */}
       <div id="skill" className="justify-center w-1/2 flex flex-col">
         <div className="text-4xl font-extrabold tracking-widest">
-          <RoughHighlight>skills</RoughHighlight>
+          Skills
         </div>
 
         {/* Languages */}
-        <SkillsBlock title="languages" skill={languages} />
+        <SkillsBlock title="Languages" skill={languages} />
 
         {/* Front-end Development */}
         <SkillsBlock
-          title="front end development"
+          title="Front End Development"
           skill={front_end_development}
         />
 
         {/* Back-end Development */}
         <SkillsBlock
-          title="back end development"
+          title="Back End Development"
           skill={back_end_development}
         />
 
         {/* Machine Learning Framework */}
         <SkillsBlock
-          title="machine learning framework"
+          title="Machine Learning Framework"
           skill={machine_learning_framework}
         />
 
         {/* Database Management */}
-        <SkillsBlock title="database" skill={database} />
+        <SkillsBlock title="Database" skill={database} />
 
         {/* Devops */}
-        <SkillsBlock title="devops" skill={devops} />
+        <SkillsBlock title="Devops" skill={devops} />
 
         {/* Others */}
-        <SkillsBlock title="others" skill={others} />
+        <SkillsBlock title="Others" skill={others} />
       </div>
     </>
   );

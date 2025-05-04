@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import SkillBox from "../SkillsComponent/SkillBox";
 import Modal from "./Modal";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import LanguageIcon from "@mui/icons-material/Language";
 import DisplayHTMLContent from "../DisplayHtmlContent";
 
 function ProjectBlock({
@@ -13,6 +14,7 @@ function ProjectBlock({
   projectDescription,
   githubLink,
   websiteLink,
+  featured = false,
 }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -22,78 +24,85 @@ function ProjectBlock({
 
   return (
     <>
-      {/* Project Block */}
+      {/* Project Card */}
       <div
-        className="p-5 h-4/5 w-full mx-auto flex flex-col justify-between items-center rounded-md shadow-lg cursor-pointer"
+        className={`bg-white rounded-lg shadow-lg overflow-hidden h-full flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer ${
+          featured ? "border-l-4 border-custom-text-coolTeal" : ""
+        }`}
         onClick={toggleModal}
       >
-        {/* Front Side of card */}
-        <div className="w-full h-48 bg-white border-4 border-custom-text-charcoal rounded-lg ">
+        {/* Project Image */}
+        <div className="h-48 overflow-hidden relative">
           <img
-            className="object-cover w-full h-full"
+            className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
             src={imagePath}
             alt={projectTitle}
           />
         </div>
-        {/* Project Name */}
-        <div className="text-xl mt-2 font-bold text-custom-text-charcoal tracking-wide text-center">
-          {projectTitle}
-        </div>
-        {/* Software Used To Create */}
-        <div className="justify-center text-center mt-2 space-x-2 space-y-2">
-          <SkillBox skillName={sk1} />
-          <SkillBox skillName={sk2} />
-          <SkillBox skillName={sk3} />
+
+        {/* Project Content */}
+        <div className="p-6 flex-grow flex flex-col">
+          {/* Project Title */}
+          <div className="mb-3 text-center">
+            <h3 className="text-xl font-bold text-custom-text-charcoal">{projectTitle}</h3>
+          </div>
+
+          {/* Skills */}
+          <div className="flex flex-wrap justify-center gap-2 mb-4">
+            <SkillBox skillName={sk1} />
+            <SkillBox skillName={sk2} />
+            <SkillBox skillName={sk3} />
+          </div>
         </div>
       </div>
 
       {/* Modal */}
       <Modal isOpen={isModalOpen} onClose={toggleModal} title={projectTitle}>
-        <div className="flex flex-col space-y-4">
-          <div className="flex flex-col justify-center items-center">
-            {/* Image on the left */}
-            <div className="w-1/2 h-60 justify-center text-center items-center">
-              <img
-                className="w-full h-48 md:h-full rounded-lg"
-                src={imagePath}
-                alt="Project Image"
-              />
+        <div className="flex flex-col space-y-6">
+          {/* Image and Description Layout */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Image */}
+            <div className="flex items-center justify-center">
+              <div className="w-full rounded-lg overflow-hidden shadow-md">
+                <img
+                  className="w-full object-cover"
+                  src={imagePath}
+                  alt={projectTitle}
+                />
+              </div>
             </div>
 
-            {/* Description on the right */}
-            <div className="m-6 ">
-              <p
-                className="text-base leading-relaxed text-custom-text-softBlack"
-                style={{ maxHeight: "400px", overflowY: "auto" }} // Adjust maxHeight as needed
-              >
-                {/* {projectDescription} */}
+            {/* Description */}
+            <div className="flex flex-col space-y-4">
+              <div className="bg-gray-50 rounded-lg p-4 max-h-[400px] overflow-y-auto">
                 <DisplayHTMLContent content={projectDescription} />
-              </p>
-            </div>
-          </div>
-
-          <div>
-            {/* Links to GitHub and Website */}
-            <div className="flex flex-row space-x-4 items-center justify-center">
-              {/* GitHub Link */}
-              <a
-                href={githubLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-custom-text-softBlack hover:text-custom-text-navyBlue"
-              >
-                <GitHubIcon />
-              </a>
-              {/* Website Link */}
-              <a
-                href={websiteLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-custom-text-softBlack hover:text-custom-text-navyBlue"
-              >
-                <i className="fas fa-globe text-2xl"></i>
-                <span className="ml-2">Visit Website</span>
-              </a>
+              </div>
+              
+              {/* Links */}
+              <div className="flex flex-wrap gap-4 justify-center mt-4">
+                {githubLink && (
+                  <a
+                    href={githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 text-white rounded-md transition-colors duration-200"
+                  >
+                    <GitHubIcon />
+                    <span>GitHub</span>
+                  </a>
+                )}
+                {websiteLink && (
+                  <a
+                    href={websiteLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-custom-text-coolTeal hover:bg-teal-600 text-white rounded-md transition-colors duration-200"
+                  >
+                    <LanguageIcon />
+                    <span>Visit Website</span>
+                  </a>
+                )}
+              </div>
             </div>
           </div>
         </div>

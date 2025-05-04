@@ -1,15 +1,67 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import ProjectBlock from "./ProjectComponent/ProjectBlock";
-import RoughHighlight from "./RoughHighlight";
 
 const projects = {
   // Format ["imagePath", "projectTitle", "sk1", "sk2", "sk3", "projectDescription", "githubLink", "websiteLink"
+  11: [
+    "cookbook.png",
+    <>
+      CookBook - AI-Powered Kitchen Assistant
+    </>,
+    "Python",
+    "FastAPI",
+    "React",
+    `<p><strong>CookBook is an AI-powered kitchen assistant that makes cooking stress-free, fun, and delicious by suggesting recipes based on available ingredients.</strong></p>
+    </br>
+    <p>As part of a collaborative team at NC State University, I worked with Meseker Worku Kebede and O'Neal M'Beri to enhance this application with several new features for Version 5.0, including:</p>
+    <ul>
+      <li><strong>Instant Recipe Favorites:</strong> Implemented a system for users to save their favorite recipes with a single click</li>
+      <li><strong>Custom Recipe Sharing:</strong> Developed functionality allowing users to add their own recipes with ingredients, instructions, and photos</li>
+      <li><strong>AI Nutrition-Based Filtering:</strong> Created an intelligent filter system that suggests recipes based on nutritional criteria and dietary plans</li>
+    </ul>
+    </br>
+    <p>The application leverages a modern tech stack including MongoDB for the database, FastAPI for the backend, React with TypeScript for the frontend, and is powered by Groq for the AI recipe generation and nutritional analysis.</p>
+    </br>
+    <p>My contributions included developing the backend API endpoints for recipe management, implementing the frontend components for the recipe favorites system, and coordinating with team members to ensure seamless integration of features. We maintained high code quality standards through comprehensive test coverage, automated CI/CD pipelines, and adherence to style guidelines.</p>
+    </br>
+    <p>This collaborative project achieved a near-perfect score (102/105) in the final evaluation, demonstrating our effective teamwork and technical implementation.</p>`,
+    "https://github.com/ncsugroup17/my-cookbook",
+    "https://cookbook-alpha.vercel.app/",
+  ],
+  10: [
+    "slash.png", // You'll need to add this image to your project images
+    <>
+        Slash - Price Comparison Tool
+    </>,
+    "Python",
+    "Flask",
+    "Next.js",
+    `<p><strong>Slash is a powerful e-commerce price comparison tool that helps users find the best deals across multiple shopping platforms.</strong></p>
+    </br>
+    <p>As part of a 7-person development team at NC State University, I collaborated on creating this full-stack application that scrapes leading e-commerce websites including Walmart, Target, BestBuy, Amazon, Google Shopping, BJs, Etsy, and eBay to find the best prices for products.</p>
+    </br>
+    <p>Key features of the application include:</p>
+    <ul>
+      <li><strong>Fast Search:</strong> Compare deals across multiple websites within seconds, saving over 50% of shopping time</li>
+      <li><strong>Modern UI:</strong> Two interface options including a responsive Next.js frontend with improved UX</li>
+      <li><strong>Wishlist Management:</strong> Save favorite deals for future reference</li>
+      <li><strong>AI Recommendations:</strong> Get intelligent product suggestions based on search history</li>
+      <li><strong>OAuth Authentication:</strong> Secure login with Google OAuth</li>
+    </ul>
+    </br>
+    <p>My contributions to the project included web scraper development, database integration, and collaborative work on the frontend UI. I worked closely with teammates Mohsen Esfandyari, Ali Farahat, Dillon Michels, Ryan Mikula, Meseker Worku, and O'Neal M'Beri to deliver a cohesive application that streamlines the online shopping experience.</p>
+    </br>
+    <p>The project utilized CI/CD pipelines with GitHub Actions for automated testing, style checking, and deployment, ensuring code quality throughout development.</p>
+    `,
+    "https://github.com/ncsugroup17/slash",
+    "", // Add a live demo link if available
+  ],
   1: [
     "letsStudyTogether.png",
     <>
-      <RoughHighlight typeBox="box" color="#2E2E2E" strokeWidth={2}>
+      
         Lets Study Together
-      </RoughHighlight>
+      
     </>,
     "React",
     "Express",
@@ -25,11 +77,40 @@ const projects = {
     "https://www.letsstudytogether.net",
   ],
   2: [
+    "facialNN.png", // Use a relevant image for this project
+    <>
+      
+        Deep Learning for Facial Expression Recognition
+      
+    </>,
+    "TensorFlow",
+    "Python",
+    "Neural Networks",
+    `<p><strong>A research project comparing neural network architectures for facial expression recognition using the FER-2013 dataset.</strong></p>
+    </br>
+    <p>As part of a team at North Carolina State University, I researched and developed multiple neural network models for classifying facial expressions into seven emotion categories: angry, disgust, fear, happy, neutral, sad, and surprise.</p>
+    </br>
+    <p>We implemented and analyzed four different neural network architectures:</p>
+    <ul>
+      <li><strong>Convolutional Neural Network (CNN)</strong> - Achieved 55.49% accuracy</li>
+      <li><strong>Residual Network (ResNet)</strong> - Our best performer with 68.72% accuracy</li>
+      <li><strong>Multi-Layer Perceptron (MLP)</strong> - Reached 40.71% accuracy</li>
+      <li><strong>Recurrent Neural Network (RNN)</strong> - Achieved 39.80% accuracy</li>
+    </ul>
+    </br>
+    <p>We also compared our custom models against ChatGPT-4 Turbo's image classification capabilities, where our ResNet and CNN models outperformed the LLM.</p>
+    </br>
+    <p>This project represented significant work in understanding how different neural network architectures capture spatial features for emotion recognition, contributing to advancements in human-computer interaction technologies.</p>
+    `,
+    "https://github.com/CSC522NCSU/FacialNN",
+    "",
+  ],
+  3: [
     "leetcodeBlog.png",
     <>
-      <RoughHighlight typeBox="box" color="#2E2E2E" strokeWidth={2}>
+      
         Leet Code Journal
-      </RoughHighlight>
+      
     </>,
     "React",
     "Express",
@@ -44,12 +125,12 @@ const projects = {
     "https://github.com/SyntaxErrorThapa/leetcode-blog",
     "https://www.leetcodejournal.com",
   ],
-  3: [
+  4: [
     "jobLogify.png",
     <>
-      <RoughHighlight typeBox="box" color="#2E2E2E" strokeWidth={2}>
+      
         Job Logify
-      </RoughHighlight>
+      
     </>,
     "React",
     "Express",
@@ -70,12 +151,12 @@ const projects = {
     "https://github.com/SyntaxErrorThapa/JobLogify",
     "https://www.pratikthapa.com",
   ],
-  4: [
+  5: [
     "personalBlog.png",
     <>
-      <RoughHighlight typeBox="box" color="#2E2E2E" strokeWidth={2}>
+      
         Personal Blog
-      </RoughHighlight>
+      
     </>,
     "Flask",
     "SQLite",
@@ -91,12 +172,12 @@ const projects = {
     "https://github.com/SyntaxErrorThapa/personalWebsite",
     "https://www.pratikthapa.com",
   ],
-  5: [
+  6: [
     "robotThatPlaySoccer.jpg",
     <>
-      <RoughHighlight typeBox="box" color="#2E2E2E" strokeWidth={2}>
+      
         Robot That Plays Soccer
-      </RoughHighlight>
+      
     </>,
     "TensorFlow",
     "Python",
@@ -114,12 +195,12 @@ const projects = {
     "https://github.com/SyntaxErrorThapa/Object_face_detection_rover",
     "https://youtu.be/tP2XV6Mckto?si=FJ96s6NSuJzC-5HV",
   ],
-  6: [
+  7: [
     "spotifyPlaylistMaker.jpg",
     <>
-      <RoughHighlight typeBox="box" color="#2E2E2E" strokeWidth={2}>
+      
         Spotify Playlist Maker
-      </RoughHighlight>
+      
     </>,
     "Python",
     "BeautifulSoup",
@@ -135,12 +216,12 @@ const projects = {
     "https://github.com/SyntaxErrorThapa/make-spotify-playlist",
     "https://github.com/SyntaxErrorThapa/make-spotify-playlist",
   ],
-  7: [
+  8: [
     "personalWebsite.png",
     <>
-      <RoughHighlight typeBox="box" color="#2E2E2E" strokeWidth={2}>
+      
         Personal Website
-      </RoughHighlight>
+      
     </>,
     "React",
     "Javascript",
@@ -157,12 +238,12 @@ const projects = {
     "https://github.com/SyntaxErrorThapa/javascriptPersonalWebsite",
     "https://www.pratikthapa.com",
   ],
-  8: [
+  9: [
     "wolfScheduler.png",
     <>
-      <RoughHighlight typeBox="box" color="#2E2E2E" strokeWidth={2}>
+      
         Wolf Scheduler
-      </RoughHighlight>
+      
     </>,
     "Java",
     "Junit",
@@ -185,29 +266,80 @@ const projects = {
 };
 
 function Project() {
+  const [isLoaded, setIsLoaded] = useState(false);
+  
+  // Add animation after initial render
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
+
+  // Define which projects are featured
+  const featuredProjects = ["2", "10", "11"];
+  
+  // Projects layout configuration - keeping it simple but with visual interest
+  const getLayoutClasses = (key) => {
+    // Base classes common to all projects
+    let classes = "rounded-lg overflow-hidden transition-all duration-300";
+    
+    // Featured projects get special treatment
+    if (featuredProjects.includes(key)) {
+      classes += " shadow-lg border-l-4 border-custom-text-coolTeal";
+    } else {
+      classes += " shadow-md hover:shadow-lg";
+    }
+    
+    // Add entrance animation classes
+    if (isLoaded) {
+      classes += " opacity-100 transform translate-y-0";
+    } else {
+      classes += " opacity-0 transform translate-y-8";
+    }
+    
+    return classes;
+  };
+
   return (
-    <>
-      <div className="relative container mx-auto text-4xl font-extrabold text-custom-text-charcoal mt-12 text-center">
-        <RoughHighlight>projects</RoughHighlight>
+    <div className="bg-gray-50 py-16">
+      {/* Section heading with underline */}
+      <div className="container mx-auto mb-12">
+        <h2 className="text-4xl font-extrabold text-center text-custom-text-charcoal">
+          Projects
+        </h2>
+        <div className="w-24 h-1 bg-custom-text-coolTeal mx-auto mt-4"></div>
       </div>
-      <div className="relative container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-6 gap-x-4 min-h-screen px-4 items-center">
-        {Object.entries(projects).map(([key, value]) => {
-          return (
-            <ProjectBlock
-              key={key}
-              imagePath={value[0]}
-              projectTitle={value[1]}
-              sk1={value[2]}
-              sk2={value[3]}
-              sk3={value[4]}
-              projectDescription={value[5]}
-              githubLink={value[6]}
-              websiteLink={value[7]}
-            />
-          );
-        })}
+      
+      {/* Projects grid - simple but more refined */}
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {Object.entries(projects).map(([key, value], index) => {
+            const isFeatured = featuredProjects.includes(key);
+            
+            return (
+              <div 
+                key={key} 
+                className={getLayoutClasses(key)}
+                style={{ 
+                  transitionDelay: `${index * 100}ms`,
+                  transform: isFeatured ? 'translateY(-8px)' : ''
+                }}
+              >
+                <ProjectBlock
+                  imagePath={value[0]}
+                  projectTitle={value[1]}
+                  sk1={value[2]}
+                  sk2={value[3]}
+                  sk3={value[4]}
+                  projectDescription={value[5]}
+                  githubLink={value[6]}
+                  websiteLink={value[7]}
+                  featured={isFeatured}
+                />
+              </div>
+            );
+          })}
+        </div>
       </div>
-    </>
+    </div>
   );
 }
 

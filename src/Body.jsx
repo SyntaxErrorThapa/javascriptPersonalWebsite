@@ -6,6 +6,7 @@ import Project from "./Component/project";
 import Experience from "./Component/Experience";
 import AnimatedSection from "./Component/AnimatedSection";
 import Footer from "./Component/Footer";
+import Image from "./Component/AboutComponent/Image";
 
 function Body() {
   return (
@@ -29,6 +30,11 @@ function Body() {
       <div id="experience">
         <AnimatedSection>
           <Experience />
+        </AnimatedSection>
+      </div>
+      <div id="gallery">
+        <AnimatedSection>
+          <Image />
         </AnimatedSection>
       </div>
     </>

@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.dc582104.css",
+    "main.js": "/static/js/main.ef3c2dc2.js",
+    "static/js/453.d704c9f4.chunk.js": "/static/js/453.d704c9f4.chunk.js",
+    "static/media/green-dust-and-scratches.png": "/static/media/green-dust-and-scratches.08e71866fec4c4f5e84b.png",
+    "index.html": "/index.html",
+    "main.dc582104.css.map": "/static/css/main.dc582104.css.map",
+    "main.ef3c2dc2.js.map": "/static/js/main.ef3c2dc2.js.map",
+    "453.d704c9f4.chunk.js.map": "/static/js/453.d704c9f4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dc582104.css",
+    "static/js/main.ef3c2dc2.js"
+  ]
+}
