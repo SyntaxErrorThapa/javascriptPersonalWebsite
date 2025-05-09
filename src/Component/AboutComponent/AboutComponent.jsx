@@ -24,18 +24,22 @@ const aboutBlock = [
       </>
     ),
   },
-  
 ];
 
 function AboutComponent() {
   return (
-    <div id="about" className="w-1/2 flex flex-col">
-      <div className="text-4xl font-extrabold tracking-widest">About</div>
-      <div className="text-2xl font-extrabold">NCSU '26, Student</div>
-
+    <div id="about" className="w-full md:w-1/2 flex flex-col">
+      <div className="text-3xl md:text-4xl font-extrabold tracking-widest">
+        About
+      </div>
+      <div className="text-xl md:text-2xl font-extrabold mt-2">
+        NCSU '26, Student
+      </div>
+      <div className="mt-4"></div>
       {aboutBlock.map((block) => (
         <AboutBlock key={block.id} text={block.content} />
       ))}
+      <div className="h-8 md:h-0"></div>
     </div>
   );
 }

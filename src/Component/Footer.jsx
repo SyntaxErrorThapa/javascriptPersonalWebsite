@@ -8,8 +8,9 @@ function Footer() {
       <div className="container mx-auto flex flex-col md:flex-row justify-center items-center">
         {/* Left Section - Contact Info */}
 
-        <div className="mb-4 md:mb-0 m-10 ">
-          <h2 className="text-2xl font-bold p-5"> Contact</h2>
+        <div className="mb-4 md:mb-0 m-4 md:m-10 text-center md:text-left">
+          <h2 className="text-xl md:text-2xl font-bold p-3 md:p-5">Contact</h2>
+
           <p>
             Email:{" "}
             <a
@@ -22,16 +23,18 @@ function Footer() {
         </div>
 
         {/* Center Section - Social Media Links */}
-        <div className="mb-4 md:mb-0 m-10">
-          <h2 className="text-2xl font-bold p-5">Follow Me</h2>
-          <div className="flex space-x-4 justify-center">
+        <div className="mb-4 md:mb-0 m-4 md:m-10 text-center">
+          <h2 className="text-xl md:text-2xl font-bold p-3 md:p-5">
+            Follow Me
+          </h2>
+          <div className="flex space-x-6 justify-center">
             <a
               href="https://github.com/SyntaxErrorThapa"
               target="_blank"
               rel="noopener noreferrer"
               className="text-custom-text-darkGray"
             >
-              <GitHubIcon />
+              <GitHubIcon style={{ fontSize: "1.75rem" }} />
             </a>
             <a
               href="https://linkedin.com/in/pthapa4"
@@ -39,13 +42,13 @@ function Footer() {
               rel="noopener noreferrer"
               className="text-custom-text-darkGray"
             >
-              <LinkedInIcon />
+              <LinkedInIcon style={{ fontSize: "1.75rem" }} />
             </a>
           </div>
         </div>
       </div>
 
-      <div className="container mx-auto mt-6 pt-4 text-center m-10">
+      <div className="container mx-auto mt-4 md:mt-6 pt-2 md:pt-4 text-center m-4 md:m-10">
         <p>
           &copy; {new Date().getFullYear()} Pratik Thapa. All rights reserved.
         </p>

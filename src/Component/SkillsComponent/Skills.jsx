@@ -35,10 +35,12 @@ function Skills() {
   return (
     <>
       {/* Skills section */}
-      <div id="skill" className="justify-center w-1/2 flex flex-col">
-        <div className="text-4xl font-extrabold tracking-widest">
+      <div id="skill" className="w-full md:w-1/2 flex flex-col relative z-10">
+        <div className="text-3xl md:text-4xl font-extrabold tracking-widest">
           Skills
         </div>
+
+        <div className="mt-4"></div>
 
         {/* Languages */}
         <SkillsBlock title="Languages" skill={languages} />
@@ -69,6 +71,9 @@ function Skills() {
 
         {/* Others */}
         <SkillsBlock title="Others" skill={others} />
+
+        {/* Extra padding at the bottom for mobile */}
+        <div className="h-8 md:h-0"></div>
       </div>
     </>
   );
