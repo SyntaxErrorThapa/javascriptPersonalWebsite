@@ -1,13 +1,11 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import ProjectBlock from "./ProjectComponent/ProjectBlock";
 
 const projects = {
   // Format ["imagePath", "projectTitle", "sk1", "sk2", "sk3", "projectDescription", "githubLink", "websiteLink"
-  11: [
+  1: [
     "cookbook.png",
-    <>
-      CookBook - AI-Powered Kitchen Assistant
-    </>,
+    <>CookBook - AI-Powered Kitchen Assistant</>,
     "Python",
     "FastAPI",
     "React",
@@ -28,11 +26,9 @@ const projects = {
     "https://github.com/ncsugroup17/my-cookbook",
     "https://cookbook-alpha.vercel.app/",
   ],
-  10: [
+  2: [
     "slash.png", // You'll need to add this image to your project images
-    <>
-        Slash - Price Comparison Tool
-    </>,
+    <>Slash - Price Comparison Tool</>,
     "Python",
     "Flask",
     "Next.js",
@@ -56,13 +52,9 @@ const projects = {
     "https://github.com/ncsugroup17/slash",
     "", // Add a live demo link if available
   ],
-  1: [
+  3: [
     "letsStudyTogether.png",
-    <>
-      
-        Lets Study Together
-      
-    </>,
+    <>Lets Study Together</>,
     "React",
     "Express",
     "Javascript",
@@ -76,13 +68,9 @@ const projects = {
     "https://github.com/SyntaxErrorThapa/LetsStudyTogether",
     "https://www.letsstudytogether.net",
   ],
-  2: [
+  4: [
     "facialNN.png", // Use a relevant image for this project
-    <>
-      
-        Deep Learning for Facial Expression Recognition
-      
-    </>,
+    <>Deep Learning for Facial Expression Recognition</>,
     "TensorFlow",
     "Python",
     "Neural Networks",
@@ -105,13 +93,9 @@ const projects = {
     "https://github.com/CSC522NCSU/FacialNN",
     "",
   ],
-  3: [
+  5: [
     "leetcodeBlog.png",
-    <>
-      
-        Leet Code Journal
-      
-    </>,
+    <>Leet Code Journal</>,
     "React",
     "Express",
     "Javascript",
@@ -125,13 +109,9 @@ const projects = {
     "https://github.com/SyntaxErrorThapa/leetcode-blog",
     "https://www.leetcodejournal.com",
   ],
-  4: [
+  6: [
     "jobLogify.png",
-    <>
-      
-        Job Logify
-      
-    </>,
+    <>Job Logify</>,
     "React",
     "Express",
     "Javascript",
@@ -151,13 +131,9 @@ const projects = {
     "https://github.com/SyntaxErrorThapa/JobLogify",
     "https://www.pratikthapa.com",
   ],
-  5: [
+  7: [
     "personalBlog.png",
-    <>
-      
-        Personal Blog
-      
-    </>,
+    <>Personal Blog</>,
     "Flask",
     "SQLite",
     "Python",
@@ -172,13 +148,9 @@ const projects = {
     "https://github.com/SyntaxErrorThapa/personalWebsite",
     "https://www.pratikthapa.com",
   ],
-  6: [
+  8: [
     "robotThatPlaySoccer.jpg",
-    <>
-      
-        Robot That Plays Soccer
-      
-    </>,
+    <>Robot That Plays Soccer</>,
     "TensorFlow",
     "Python",
     "Convolutional Neural Network",
@@ -195,13 +167,9 @@ const projects = {
     "https://github.com/SyntaxErrorThapa/Object_face_detection_rover",
     "https://youtu.be/tP2XV6Mckto?si=FJ96s6NSuJzC-5HV",
   ],
-  7: [
+  9: [
     "spotifyPlaylistMaker.jpg",
-    <>
-      
-        Spotify Playlist Maker
-      
-    </>,
+    <>Spotify Playlist Maker</>,
     "Python",
     "BeautifulSoup",
     "Spotipy",
@@ -216,13 +184,9 @@ const projects = {
     "https://github.com/SyntaxErrorThapa/make-spotify-playlist",
     "https://github.com/SyntaxErrorThapa/make-spotify-playlist",
   ],
-  8: [
+  10: [
     "personalWebsite.png",
-    <>
-      
-        Personal Website
-      
-    </>,
+    <>Personal Website</>,
     "React",
     "Javascript",
     "TailWindCSS",
@@ -238,13 +202,9 @@ const projects = {
     "https://github.com/SyntaxErrorThapa/javascriptPersonalWebsite",
     "https://www.pratikthapa.com",
   ],
-  9: [
+  11: [
     "wolfScheduler.png",
-    <>
-      
-        Wolf Scheduler
-      
-    </>,
+    <>Wolf Scheduler</>,
     "Java",
     "Junit",
     "Object Oriented Programming",
@@ -266,63 +226,22 @@ const projects = {
 };
 
 function Project() {
-  const [isLoaded, setIsLoaded] = useState(false);
-  
-  // Add animation after initial render
-  useEffect(() => {
-    setIsLoaded(true);
-  }, []);
-
-  // Define which projects are featured
-  const featuredProjects = ["2", "10", "11"];
-  
-  // Projects layout configuration - keeping it simple but with visual interest
-  const getLayoutClasses = (key) => {
-    // Base classes common to all projects
-    let classes = "rounded-lg overflow-hidden transition-all duration-300";
-    
-    // Featured projects get special treatment
-    if (featuredProjects.includes(key)) {
-      classes += " shadow-lg border-l-4 border-custom-text-coolTeal";
-    } else {
-      classes += " shadow-md hover:shadow-lg";
-    }
-    
-    // Add entrance animation classes
-    if (isLoaded) {
-      classes += " opacity-100 transform translate-y-0";
-    } else {
-      classes += " opacity-0 transform translate-y-8";
-    }
-    
-    return classes;
-  };
-
   return (
-    <div className="bg-gray-50 py-16">
-      {/* Section heading with underline */}
-      <div className="container mx-auto mb-12">
-        <h2 className="text-4xl font-extrabold text-center text-custom-text-charcoal">
-          Projects
-        </h2>
-        <div className="w-24 h-1 bg-custom-text-coolTeal mx-auto mt-4"></div>
-      </div>
-      
-      {/* Projects grid - simple but more refined */}
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {Object.entries(projects).map(([key, value], index) => {
-            const isFeatured = featuredProjects.includes(key);
-            
-            return (
-              <div 
-                key={key} 
-                className={getLayoutClasses(key)}
-                style={{ 
-                  transitionDelay: `${index * 100}ms`,
-                  transform: isFeatured ? 'translateY(-8px)' : ''
-                }}
-              >
+    <>
+      <div className="bg-gray-50 py-16">
+        {/* Section heading with underline */}
+        <div className="container mx-auto mb-12">
+          <h2 className="text-4xl font-extrabold text-center text-custom-text-charcoal">
+            Projects
+          </h2>
+          <div className="w-24 h-1 bg-custom-text-coolTeal mx-auto mt-4"></div>
+        </div>
+
+        {/* Projects grid - simple but more refined */}
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {Object.entries(projects).map(([key, value]) => {
+              return (
                 <ProjectBlock
                   imagePath={value[0]}
                   projectTitle={value[1]}
@@ -332,14 +251,15 @@ function Project() {
                   projectDescription={value[5]}
                   githubLink={value[6]}
                   websiteLink={value[7]}
-                  featured={isFeatured}
+                  
                 />
-              </div>
-            );
-          })}
+              );
+            })}
+            ;
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

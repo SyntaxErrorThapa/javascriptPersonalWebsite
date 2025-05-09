@@ -1,6 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 function Modal({ isOpen, onClose, title, children }) {
+  // Using useEffect to disable the scrolling of the background after the modal is open
+  useEffect(
+    () => {
+      if (isOpen) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "auto";
+      }
+
+      // Cleanup
+      return () => {
+        document.body.style.overflow = "auto";
+      };
+    },
+    [isOpen]
+  );
+
   if (!isOpen) return null;
 
   return (
@@ -8,6 +25,9 @@ function Modal({ isOpen, onClose, title, children }) {
       id="static-modal"
       className="fixed inset-0 z-50 flex justify-center items-center w-full h-full bg-black bg-opacity-50"
       aria-hidden="true"
+      onClick={(e) => {
+        if (e.target.id === "static-modal") onClose();
+      }}
     >
       <div className="relative p-4 w-full max-w-4xl max-h-full">
         <div className="relative bg-custom-bg rounded-lg shadow-lg">
