@@ -9,6 +9,7 @@ import Footer from "./Component/Footer";
 import Image from "./Component/AboutComponent/Image";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import BlogPage from "./Component/Blog/BlogPage";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
             <Route path="/projects" element={<Project />} />
             <Route path="/experience" element={<Experience />} />
             <Route path="/gallery" element={<Image />} />
+            <Route path="/blog" element={<BlogPage />} />
           </Routes>
           <Footer />
         </div>
