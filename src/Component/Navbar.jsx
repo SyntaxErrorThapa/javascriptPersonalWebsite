@@ -114,6 +114,23 @@ function NavBar() {
                 Experience
               </RoughNotation>
             </Link>
+
+            <Link
+              to="/blog"
+              className="text-lg font-bold"
+              onMouseEnter={() => handleMouseEnter("blog")}
+              onMouseLeave={handleMouseLeave}
+            >
+              <RoughNotation
+                type="underline"
+                show={hoveredLink === "blog"}
+                color="#2E2E2E"
+                animationDuration={1000}
+                strokeWidth={3}
+              >
+                Blog
+              </RoughNotation>
+            </Link>
           </div>
         </div>
 
