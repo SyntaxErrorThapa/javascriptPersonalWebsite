@@ -1,0 +1,18 @@
+{
+    "blogs": [
+      {
+        "id": 1,
+        "date": "Jan 1st, 2025",
+        "title": "Blog1",
+        "subtitle": "This is blog first",
+        "paragraphs": ["Paragraph 1", "Paragraph 2"]
+      }, 
+      {
+        "id": 2,
+        "date": "Jan 1st, 2025",
+        "title": "Hello Bro",
+        "subtitle": "This is blog second",
+        "paragraphs": ["Paragraph 1", "Paragraph 2"]
+      }
+    ]
+  }

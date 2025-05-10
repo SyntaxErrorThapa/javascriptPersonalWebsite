@@ -1,7 +1,29 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import BlogCard from "./BlogCard";
 
 function BlogPage() {
+  const [blogData, setBlogData] = useState({ blogs: [] });
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchBlogDate() {
+      try {
+        const response = await fetch("/Blog.json");
+        const data = await response.json();
+        console.log(data);
+        setBlogData(data);
+        setIsLoading(false);
+      } catch (error) {
+        console.error("Error loading the JSON file:", error);
+        setIsLoading(false);
+      }
+    }
+
+    fetchBlogDate();
+  }, []);
+  if (isLoading)
+    return <div className="text-center py-16">Loading blogs...</div>;
+
   return (
     <>
       <div className="bg-gray-50 py-16">
@@ -14,12 +36,15 @@ function BlogPage() {
         </div>
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <BlogCard />
-            <BlogCard />
-            <BlogCard />
-            <BlogCard />
-            <BlogCard />
-            <BlogCard />
+            {blogData.blogs.map((blog) => (
+              <BlogCard
+                key={blog.id}
+                title={blog.title}
+                subtitle={blog.subtitle}
+                date={blog.date}
+                paragraph={blog.paragraph}
+              />
+            ))}
           </div>
         </div>
       </div>
