@@ -10,6 +10,7 @@ import Image from "./Component/AboutComponent/Image";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import BlogPage from "./Component/Blog/BlogPage";
+import BlogDetail from "./Component/Blog/BlogDetail";
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
             <Route path="/experience" element={<Experience />} />
             <Route path="/gallery" element={<Image />} />
             <Route path="/blog" element={<BlogPage />} />
+            <Route path="/blog/:id" element={<BlogDetail />} />
           </Routes>
           <Footer />
         </div>

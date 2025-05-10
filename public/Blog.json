@@ -1,18 +1,30 @@
 {
-    "blogs": [
-      {
-        "id": 1,
-        "date": "Jan 1st, 2025",
-        "title": "Blog1",
-        "subtitle": "This is blog first",
-        "paragraphs": ["Paragraph 1", "Paragraph 2"]
-      }, 
-      {
-        "id": 2,
-        "date": "Jan 1st, 2025",
-        "title": "Hello Bro",
-        "subtitle": "This is blog second",
-        "paragraphs": ["Paragraph 1", "Paragraph 2"]
-      }
-    ]
-  }
+  "blogs": [
+    {
+      "id": 1,
+      "date": "Jan 1st, 2025",
+      "title": "Blog Title 1",
+      "subtitle": "A brief description of the blog post",
+      "mainimage": "/titleImage.jpeg",
+      "image":"",
+      "paragraphs": [
+        "This is the first paragraph of the blog post.",
+        "This is the second paragraph with more detailed content.",
+        "And this is a final paragraph that wraps up the blog post."
+      ]
+    },
+    {
+      "id": 2,
+      "date": "Jan 15th, 2025",
+      "title": "Blog Title 2",
+      "subtitle": "Another interesting blog post",
+      "mainimage": "/path/to/image2.jpg",
+      "image": "",
+      "paragraphs": [
+        "Introduction paragraph for the second blog post.",
+        "More detailed information about the topic.",
+        "Conclusion with key takeaways."
+      ]
+    }
+  ]
+}

@@ -10,7 +10,6 @@ function BlogPage() {
       try {
         const response = await fetch("/Blog.json");
         const data = await response.json();
-        console.log(data);
         setBlogData(data);
         setIsLoading(false);
       } catch (error) {
@@ -39,10 +38,12 @@ function BlogPage() {
             {blogData.blogs.map((blog) => (
               <BlogCard
                 key={blog.id}
+                id={blog.id}
                 title={blog.title}
                 subtitle={blog.subtitle}
                 date={blog.date}
-                paragraph={blog.paragraph}
+                paragraph={blog.paragraphs || blog.paragraph}
+                image={blog.image}
               />
             ))}
           </div>
