@@ -1,0 +1,21 @@
+{
+  "blogs": [
+    {
+      "id": 1,
+      "date": "May 10, 2025",
+      "title": "Why?",
+      "subtitle": "An ardor for lonliness and solitude",
+      "mainimage": "/titleImage.jpeg",
+      "secondaryImage": "/image1.jpg",
+      "imageCaption": "Solitude and Lonliness",
+      "image": "/image1.jpg",
+      "paragraphs": [
+        "Why do I find peace in the quiet of my room,<br/>Why does the hum of silence feel like a gentle boom?<br />Why do crowded spaces feel heavy and loud,<br/>Why do I hide my voice beneath the chatter of a crowd?<br/>",
+        "Why does a book speak louder than a room full of talk, <br/>Why do I feel free when I take a solo walk? <br/> Why does the world slow down when I'm alone, <br/> Why does my mind find comfort in thoughts I own?",
+        "Why do deep conversations mean more than small words, <br/> Why does my heart take flight when unseen like birds?<br/> Why do I see beauty in moments others pass by, <br/> Why do I feel calm under a vast, endless sky?",
+        "Why do I hesitate to say what I truly feel, <br/>Why do I retreat when life spins its wheel?<br/> Why is solitude a sanctuary, not a cage, <br/> Why do I feel older than my own age?",
+        "Why, you may ask, do I choose this gentle retreat?<br/> Why, I'll reply, it's where I feel most complete."
+      ]
+    }
+  ]
+}

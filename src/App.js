@@ -9,12 +9,14 @@ import Footer from "./Component/Footer";
 import Image from "./Component/AboutComponent/Image";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import BlogPage from "./Component/Blog/BlogPage";
+import BlogDetail from "./Component/Blog/BlogDetail";
 
 function App() {
   return (
     <Router>
       <>
-        <div className="fixed flex flex-col left-0 top-1/2 transform -translate-y-1/2 space-y-4">
+        {/* <div className="fixed flex flex-col left-0 top-1/2 transform -translate-y-1/2 space-y-4">
           <a
             href="https://github.com/SyntaxErrorThapa"
             target="_blank"
@@ -31,7 +33,7 @@ function App() {
           >
             <LinkedInIcon style={{ fontSize: 40 }} />
           </a>
-        </div>
+        </div> */}
 
         {/* Main Content */}
         <div className="flex flex-col min-h-screen bg-white bg-custom-bg-image font-fira text-custom-text-charcoal">
@@ -42,6 +44,8 @@ function App() {
             <Route path="/projects" element={<Project />} />
             <Route path="/experience" element={<Experience />} />
             <Route path="/gallery" element={<Image />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/blog/:id" element={<BlogDetail />} />
           </Routes>
           <Footer />
         </div>
