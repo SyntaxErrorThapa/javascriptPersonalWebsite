@@ -193,6 +193,13 @@ function NavBar() {
             >
               Experience
             </Link>
+            <Link
+              to="/blog"
+              className="block py-3 px-4 text-center font-bold hover:bg-gray-100"
+              onClick={closeMenu}
+            >
+              Blog
+            </Link>
           </div>
         )}
       </div>
