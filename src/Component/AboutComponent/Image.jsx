@@ -36,7 +36,10 @@ const ImageGallery = () => {
       path: "Hiking Trip.jpeg",
       caption: "Adventure through nature trails"
     },
-    
+    {
+      path: "murph2025.jpeg", 
+      caption: "Murph 2025"
+    }
     
   ];
 
