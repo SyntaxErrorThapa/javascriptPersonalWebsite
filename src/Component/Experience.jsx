@@ -7,14 +7,27 @@ function ExperienceTimeline() {
       company: (
         <>
           {/* <RoughHighlight typeBox="box" color="#2E2E2E" strokeWidth={2}> */}
-          SAS
+          SAS (Year-Round)
           {/* </RoughHighlight> */}
         </>
       ),
       role: "Reliability Engineer for IoT Systems",
       location: "Raleigh, NC",
       duration: "May 2025",
-      description: [<>[Upcoming]</>],
+      description: [
+      <>
+        Fine-tuned DETR with DINO backbone for richer feature extraction, boosting worker safety in industrial IoT.
+      </>, 
+      <>
+        Raised F1 to 91% and accuracy to 88% with optimized augmentation, outperforming SAS model for client.
+      </>,
+      <>
+        Deployed RFDETR (ONNX) model in SAS ESP, driving Release 2 adoption, to increase revenue by 15%.
+      </>,  
+      <>
+        Collaborated with engineers to integrate model into a real-time analytics pipeline for factory floor insights.
+      </>
+      ],
     },
     {
       company: (
@@ -66,16 +79,13 @@ function ExperienceTimeline() {
           to integrate diverse engineering perspectives.
         </>,
         <>
-          Led software development efforts for a pediatric scoliosis treatment
-          device.
+          Co-authored a research paper, ”Automated Halo Gravity Traction for Scoliosis Treatment"
         </>,
         <>
-          Implemented multi-threading to enhance system robustness and
-          performance.
+          Refactored system with ROS2, leveraging 4-core arch to boost CPU utilization by 35% and improve modularity.
         </>,
         <>
-          Coordinated with stakeholders to define and refine new software
-          feature requirements
+          Integrated Raspberry Pi and AWS Lambda to trigger event-based logging to RDS, enabling real-time IoT tracking.
         </>,
       ],
     },
@@ -83,7 +93,7 @@ function ExperienceTimeline() {
       company: (
         <>
           Engineering Information Technology at North Carolina State
-          University(ITECS)
+          University(ITECS) (Year Round)
         </>
       ),
       role: "Full Stack",
