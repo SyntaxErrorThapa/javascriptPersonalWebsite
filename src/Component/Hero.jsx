@@ -44,7 +44,7 @@ function Hero() {
       {/* Gif of Programmer*/}
       <div className="w-full md:w-3/6 mb-6 md:mb-0 flex justify-center items-center">
         <img
-          src="programmer.gif"
+          src={`${process.env.PUBLIC_URL}/programmer.gif`}
           alt="Programmer working"
           className="w-4/5 md:w-full max-h-[200px] md:max-h-none object-cover rounded-lg"
         />

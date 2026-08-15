@@ -8,7 +8,7 @@ function BlogPage() {
   useEffect(() => {
     async function fetchBlogDate() {
       try {
-        const response = await fetch("/Blog.json");
+        const response = await fetch(`${process.env.PUBLIC_URL}/Blog.json`);
         const data = await response.json();
         setBlogData(data);
         setIsLoading(false);

@@ -11,6 +11,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import BlogPage from "./Component/Blog/BlogPage";
 import BlogDetail from "./Component/Blog/BlogDetail";
+import ProjectDetail from "./Component/ProjectComponent/ProjectDetail";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
             <Route path="/" element={<Hero />} />
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Project />} />
+            <Route path="/projects/:slug" element={<ProjectDetail />} />
             <Route path="/experience" element={<Experience />} />
             <Route path="/gallery" element={<Image />} />
             <Route path="/blog" element={<BlogPage />} />

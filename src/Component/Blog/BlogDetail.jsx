@@ -9,7 +9,7 @@ function BlogDetail() {
   useEffect(() => {
     async function fetchBlogDetail() {
       try {
-        const response = await fetch("/Blog.json");
+        const response = await fetch(`${process.env.PUBLIC_URL}/Blog.json`);
         const data = await response.json();
         const foundBlog = data.blogs.find((blog) => blog.id === parseInt(id));
         setBlog(foundBlog);
@@ -45,7 +45,7 @@ function BlogDetail() {
       <div className="w-full h-80 md:h-[40vh] lg:h-[50vh] bg-gray-900 relative overflow-hidden">
         <img
           className="w-full h-full object-cover object-center scale-125 opacity-90"
-          src={blog.mainimage || "blog-default-banner.jpg"}
+          src={`${process.env.PUBLIC_URL}${blog.mainimage || "/blog-default-banner.jpg"}`}
           alt=""
           style={{ transform: "scale(1)", objectPosition: "60% 10%" }}
         />
@@ -77,7 +77,7 @@ function BlogDetail() {
             <div className="mb-8">
               <img
                 className="w-full rounded-md"
-                src={blog.secondaryImage}
+                src={`${process.env.PUBLIC_URL}${blog.secondaryImage}`}
                 alt=""
               />
               {blog.imageCaption && (
