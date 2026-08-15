@@ -113,7 +113,7 @@ You may hear me speak of love, yes, that is me, aching in the fire I cannot esca
             onClick={() => openModal(post)}
           >
             <img
-              src={post.images[0]} // first image as preview
+              src={`${process.env.PUBLIC_URL}/${post.images[0]}`} // first image as preview
               alt={`Post ${index + 1}`}
               className="w-full h-60 object-cover rounded-lg shadow-sm group-hover:opacity-80 transition duration-200"
             />
@@ -142,7 +142,7 @@ You may hear me speak of love, yes, that is me, aching in the fire I cannot esca
             {/* Image Carousel */}
             <div className="relative">
               <img
-                src={selectedPost.images[currentImageIndex]}
+                src={`${process.env.PUBLIC_URL}/${selectedPost.images[currentImageIndex]}`}
                 alt="Selected"
                 className="w-full max-h-[80vh] object-contain rounded-t-lg"
               />

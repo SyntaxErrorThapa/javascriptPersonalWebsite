@@ -9,7 +9,7 @@ function BlogCard({ id, image, date, title, subtitle, paragraph }) {
       <div className="max-w-sm bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:shadow-xl hover:-translate-y-1">
         {/* Card Image */}
         <div className="h-40 overflow-hidden">
-          <img className="w-full h-full object-cover" src={image} alt={image} />
+          <img className="w-full h-full object-cover" src={`${process.env.PUBLIC_URL}${image}`} alt={image} />
         </div>
 
         {/* Card Content */}

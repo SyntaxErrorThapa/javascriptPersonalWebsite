@@ -37,24 +37,19 @@ function ExperienceTimeline() {
           {/* </RoughHighlight> */}
         </>
       ),
-      role: "Undergraduate Research On Self Driving Car",
+      role: "Autonomous Systems Research Intern",
       location: "Raleigh, NC",
-      duration: "August 2023 - Present",
+      duration: "August 2023 - May 2026",
       description: [
         <>
-          Co-authored a research paper, "Q-Loc: Visual Cue-Based Ground Vehicle
-          Localization Using LSTM" submitted to ICRA 2025, and developed a
-          neural network model to improve GPS accuracy using varied GPS data.
+          Presented framework at the NCDOT Research & Innovation Symposium
+          2025 and at RIoT 2025.
         </>,
-        "Trained a YOLO-based model for real-time path detection and implemented an autonomous navigation algorithm \
-        to keep the vehicle on path while avoiding pedestrians and obstacles over 5 miles.",
-        // <>
-        //   Currently working on{" "}
-        //   <RoughHighlight typeBox="underline" color="#2E2E2E" strokeWidth={2}>
-        //     publishing a paper focused on localization techniques.
-        //   </RoughHighlight>
-        // </>,
-        "Employed LiDAR technology for simultaneous localization and mapping (SLAM).",
+        <>
+          Leveraged DINOv2 for feature extraction and built an
+          attention-based segmentation model to detect traversable paths.
+        </>,
+        "Trained a YOLO-based model for real-time path and pedestrian detection with 82% accuracy.",
       ],
     },
     {
