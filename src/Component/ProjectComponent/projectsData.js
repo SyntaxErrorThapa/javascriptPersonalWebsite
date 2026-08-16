@@ -168,17 +168,155 @@ const projects = [
   },
   {
     slug: "insight",
-    imagePath: null,
+    imagePath: "insight/INSIGHT_System.jpeg",
     title: "INSIGHT",
-    sk1: "TBD",
-    sk2: "TBD",
-    sk3: "TBD",
-    description: `<p><strong>Placeholder — full write-up coming soon.</strong></p>
-    </br>
-    <p>Details on INSIGHT's tech stack, my role, and outcomes will be added here.</p>`,
-    githubLink: "",
-    websiteLink: "",
+    sk1: "ROS2",
+    sk2: "PID Control",
+    sk3: "AWS",
+    content: [
+      {
+        type: "text",
+        html: `<p><strong>INSIGHT (Intelligent In-home Safe Halo Gravity Traction) is a medical device developed jointly by NC State University and UNC Chapel Hill (UNC Health) to make Halo Gravity Traction — the standard pre-surgical treatment for severe adolescent idiopathic scoliosis — safe, precise, and usable outside a hospital.</strong> The project is led by Dr. Gregory Buckner (Distinguished Professor, NCSU Mechanical &amp; Aerospace Engineering) and Sean Zeller, MBA, MSPO, CPO (Director of Prosthetics and Orthotics, UNC Hospitals), with Shaphan Jernigan as lab manager and an undergraduate research team of Cole Malinchock, Will Mueller, Hailey Nguyen, Edward Katz, Emma Brown, and myself.</p>`,
+      },
+      {
+        type: "text",
+        html: `<p><strong>Background &amp; Motivation</strong> — Adolescent Idiopathic Scoliosis (AIS) is diagnosed in roughly 3 million patients each year, and about 10% progress to severe AIS (Cobb angle exceeding 40°), which requires spinal fusion surgery. Halo Gravity Traction (HGT) — a halo ring surgically fixed to the skull, connected to a counterweight traction system and worn 24 hours a day for 3–8 weeks — is the current pre-surgery treatment, and it measurably improves surgical outcomes. But existing HGT systems have real setbacks: they aren't standardized across hospitals (raising safety and accessibility concerns), apply imprecise, static loads, and are difficult to transport — which keeps patients in the hospital as inpatients for the full course of treatment, at a cost of roughly $4,000/day. INSIGHT's goal is a version of HGT that's safe enough, precise enough, and portable enough to move that treatment out of the hospital and into a patient's home.</p>`,
+      },
+      {
+        type: "text",
+        html: `<p>The system provides traction through a stepper motor under closed-loop <strong>PID control</strong>, with dual load cells (HX711 amplifiers) giving real-time tension feedback, and a rechargeable LiFePO4 battery rated for roughly 12 hours of use. A touchscreen interface built with <strong>Kivy</strong> lets a patient or caregiver run the device in two modes: <strong>Constant Setpoint</strong>, which holds a fixed tension the patient dials in, or <strong>Prescribed Therapy</strong>, which cycles tension between physician-set thresholds on a timed interval — both walker- and wheelchair-mounted versions share the same control hardware and software.</p>`,
+      },
+      {
+        type: "media",
+        items: [
+          {
+            type: "image",
+            src: "insight/GUI.jpeg",
+            caption: "INSIGHT touchscreen GUI — Constant Setpoint and Prescribed Therapy modes",
+          },
+        ],
+      },
+      {
+        type: "text",
+        html: `<p>Under the hood, INSIGHT runs on <strong>ROS2</strong> as a set of independent nodes so that no single point of failure can take down the whole system:</p>
+        <ul class="list-disc pl-6 space-y-1">
+          <li><strong>Load Cell Node</strong> (5 Hz) — reads both HX711 amplifiers and publishes filtered tension.</li>
+          <li><strong>Motor Control Node</strong> (20 Hz) — runs the PID control loop and enforces safety interlocks before driving the motor.</li>
+          <li><strong>E-Stop Node</strong> (50 Hz) — polls the emergency-stop buttons and broadcasts safety status to every other node directly, not just through the GUI.</li>
+          <li><strong>Power Sensor Node</strong> (10 Hz) — monitors battery voltage/current via an INA260 sensor.</li>
+          <li><strong>Logger Node</strong> (1 Hz) — writes CSV logs and JSON session summaries, and checks internet connectivity.</li>
+          <li><strong>Kivy GUI Node</strong> — drives the touchscreen and buffers tension data for transmission.</li>
+          <li><strong>API Node</strong> — batches tension packets (up to 60 points, sent every 60 seconds during an active session) and pushes them to the cloud over AWS SigV4-authenticated requests.</li>
+        </ul>`,
+      },
+      {
+        type: "text",
+        html: `<p><strong>Safety</strong> was the core design constraint, given this runs on a pediatric medical device. The mechanical fuse went through two generations — a 1st-generation magnetic design (compact, repeatable, but attracted to surrounding metal objects and non-adjustable) and a 2nd-generation mechanical design with an adjustable release threshold (20–60 lbf), repeatable within ±2 lbf, and resettable without tools. That's layered with dual E-stop buttons, anti-tipping wheels, temperature sensors, sensor fault-tolerance, and minimal exposed wiring to reduce entanglement risk. On the validation side, the frame was analyzed in SolidWorks FEA to a structural factor of safety greater than 2.5 against the IEC 60601-1 medical device standard, and the full system passed a 12-hour continuous endurance test with a mean tension error of 0.05 lb (± 0.34 lb std. dev.) and internal temperature staying below 30°C throughout.</p>`,
+      },
+      {
+        type: "text",
+        html: `<p><strong>Clinical trial</strong> — INSIGHT ran an IRB-approved clinical trial in collaboration with <strong>UNC Children's Hospital</strong>, treating 3 patients aged 7–9 years old for 2–5 months in gravity traction; 2 of the 3 went on to complete their spinal fusion surgery. The system held tension accurately through dynamic patient movement (±0.2 lb precision), the mechanical fuse correctly triggered during real overload events, and both patients and parents reported satisfaction with how easy the device was to use. The trials also surfaced concrete next steps — handling patient motion more gracefully, and validating behavior when the mechanical fuse isn't engaged.</p>`,
+      },
+      {
+        type: "text",
+        html: `<p><strong>INSIGHT Analytics Web App</strong> — A React dashboard that gives physicians real-time, remote visibility into a patient's treatment: live tension and setpoint charts for both the walker and wheelchair devices, a usage overview (total and daily-average time in traction), prescribed therapy management, and CSV data export. It's backed by a Node/Express API on <strong>AWS Lambda</strong> (serverless) reading and writing an <strong>AWS RDS MySQL</strong> database, hosted on AWS Amplify, and includes a built-in AI chatbot physicians can ask questions about a patient's INSIGHT data. The on-device API Node syncs tension and therapy session data to this same backend over the internet, so a physician can monitor a patient's treatment without being in the room. <a href="https://github.com/InsightNCSU/insight_ros2_app" target="_blank" rel="noopener noreferrer">View the INSIGHT ROS2 system on GitHub</a> · <a href="https://github.com/InsightNCSU/insightWebApp" target="_blank" rel="noopener noreferrer">View the INSIGHT Analytics web app on GitHub</a>.</p>`,
+      },
+      {
+        type: "media",
+        items: [
+          {
+            type: "image",
+            src: "insight/insight_webapp_to_display_data.png",
+            caption: "INSIGHT Analytics — remote tension monitoring for a patient's walker and wheelchair devices",
+          },
+        ],
+      },
+      {
+        type: "text",
+        html: `<p>Our team presented this work — <em>"Engineering a Safe, Intelligent Halo Gravity Traction System for Effective Pre-Surgical Outpatient Treatment of Severe Idiopathic Scoliosis"</em> — at the Biomedical Engineering Society (BMES) national conference and took <strong>1st place</strong> in the design competition. We're now pursuing NIH funding to continue clinical development toward a device families could eventually lease for around $150/day, versus the current $4,000/day inpatient cost.</p>`,
+      },
+      {
+        type: "media",
+        items: [
+          {
+            type: "image",
+            src: "insight/medtronic_design_competition_winner.jpeg",
+            caption: "1st Place, Medtronic Design Competition at BMES",
+          },
+          {
+            type: "image",
+            src: "insight/BMES_Poster_Presentation.jpeg",
+            caption: "Presenting the INSIGHT poster at BMES",
+          },
+        ],
+      },
+      {
+        type: "media",
+        items: [
+          {
+            type: "image",
+            src: "insight/Slide2.jpg",
+            caption: "BMES poster: Engineering a Safe, Intelligent Halo Gravity Traction System for Effective Pre-Surgical Outpatient Treatment of Severe Idiopathic Scoliosis",
+          },
+        ],
+      },
+    ],
+    githubLink: "https://github.com/InsightNCSU",
+    websiteLink: "https://main.d179h4igj680y4.amplifyapp.com/",
     featured: true,
+    documents: [
+      {
+        label: "INSIGHT Q4 Presentation (PDF)",
+        href: "insight/Q4 Presentation.pdf",
+      },
+    ],
+    timeline: [
+      {
+        date: "June 2023",
+        title: "Initial Prototype",
+        description: "Built the first hospital-mounted Halo Gravity Traction rig.",
+      },
+      {
+        date: "August 2023",
+        title: "Electronics & Motor Bench Testing",
+        description: "Bench-top motor control and sensor electronics development.",
+      },
+      {
+        date: "December 2023",
+        title: "Mobile App & Tension Display",
+        description: "First mobile interface with a live tension chart and scheduling.",
+      },
+      {
+        date: "January 2024",
+        title: "Wheelchair System Design",
+        description: "CAD design and structural (FEA) analysis of the wheelchair-mounted system.",
+      },
+      {
+        date: "May 2024",
+        title: "Wheelchair Prototype",
+        description: "Built and tested the physical wheelchair-mounted prototype.",
+      },
+      {
+        date: "August 2024",
+        title: "Custom PCB & INSIGHT Analytics",
+        description: "Custom control PCB and the first version of the INSIGHT Analytics web dashboard.",
+      },
+      {
+        date: "September 2025",
+        title: "BMES National Conference",
+        description: "1st Place, Medtronic Design Competition; presented the INSIGHT poster.",
+      },
+      {
+        date: "December 2025",
+        title: "NIH Funding Pursuit",
+        description: "Pursuing NIH funding to continue clinical development.",
+      },
+      {
+        date: "February 2026",
+        title: "Fully Integrated System",
+        description: "Integrated wheelchair-mounted system with labeled load cells, mechanical fuse, E-stop, and battery/control enclosures.",
+      },
+    ],
   },
   {
     slug: "sas-computer-vision-project",
