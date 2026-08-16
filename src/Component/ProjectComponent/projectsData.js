@@ -115,6 +115,16 @@ const projects = [
         type: "text",
         html: `<p><strong>Telemetry Web App</strong> — A React/Vite dashboard paired with a Python (Socket.IO + eventlet) backend that streams live GPS position, LiDAR point clouds, and camera frames to the browser over WebSockets. It renders a live satellite map showing the vehicle's position, heading, and field of view, a custom Three.js LiDAR point-cloud viewer with adjustable distance/height/intensity filtering, and a live camera feed, and lets a user click waypoint nodes on the map to trigger navigation along predefined route segments. The backend also integrates with Google Cloud Pub/Sub to ingest live robot position, camera, and command telemetry. <a href="https://github.com/ncsu-yoon-lab/TelemetryWebApp" target="_blank" rel="noopener noreferrer">View the Telemetry Web App on GitHub</a>.</p>`,
       },
+      {
+        type: "media",
+        items: [
+          {
+            type: "video",
+            src: "webapp.mp4",
+            caption: "Telemetry Web App — live GPS location, Google Cloud Pub/Sub data flow, and a live view of the vehicle during an event",
+          },
+        ],
+      },
     ],
     githubLink: "https://github.com/ncsu-yoon-lab",
     websiteLink: "",
