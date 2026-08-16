@@ -28,7 +28,12 @@ const projects = [
       {
         type: "media",
         items: [
-          { type: "video", src: "3project_oval_assets.mp4", caption: "Project Oval in action" },
+          {
+            type: "video",
+            src: "3project_oval_assets.mp4",
+            caption: "Project Oval in action",
+            fit: "contain",
+          },
         ],
       },
       {
@@ -55,7 +60,9 @@ const projects = [
           {
             type: "image",
             src: "project_oval_image_segmentation.jpg",
-            caption: "Path following pipeline: camera input → segmentation mask (path vs. no path) → steering angle & distance from the path edge → overlay with the fine-tuned landmark/object detector",
+            fit: "contain",
+            caption:
+              "Path following pipeline: camera input → segmentation mask (path vs. no path) → steering angle & distance from the path edge → overlay with the fine-tuned landmark/object detector",
           },
         ],
       },
@@ -66,6 +73,7 @@ const projects = [
             type: "video",
             src: "project_oval_at_riot_event.mp4",
             caption: "Live path following demo at RIoT 2025",
+            fit: "contain",
           },
         ],
       },
@@ -86,19 +94,33 @@ const projects = [
       },
       {
         type: "text",
-        html: `<p>The localization side of the project produced a companion research paper, <strong>QLOC: Wheel-Odometry-Based Ground Vehicle Localization Using LSTM</strong>, presented and published at IEEE IV 2025. QLOC predicts the vehicle's latitude/longitude from camera images alone — detecting landmarks (buildings, signs, lampposts) with Faster R-CNN/YOLO and feeding their positions into an LSTM to regress location — reaching an average localization error of 16.57m, a 64.7% improvement over the prior baseline, without needing an expensive RTK/GPS unit once trained. Read the full paper and view the project summary slides below.</p>`,
+        html: `<p>The localization side of the project produced a companion research paper, <strong>Q-Loc Visual Cue-Based Ground Vehicle Localization Using Long Short-Term Memory</strong>, presented and published at IEEE IV 2025. QLOC predicts the vehicle's latitude/longitude from camera images alone — detecting landmarks (buildings, signs, lampposts) with Faster R-CNN/YOLO and feeding their positions into an LSTM to regress location — reaching an average localization error of 16.57m, a 64.7% improvement over the prior baseline, without needing an expensive RTK/GPS unit once trained. Read the full paper and view the project summary slides below.</p>`,
       },
       {
         type: "media",
         items: [
-          { type: "image", src: "IV_poster.jpg", caption: "QLOC poster, IEEE IV 2025" },
+          {
+            type: "image",
+            src: "IV_poster.jpg",
+            fit: "contain",
+            caption: "QLOC poster, IEEE IV 2025",
+          },
         ],
       },
       {
         type: "media",
         items: [
-          { type: "image", src: "teamImage.jpeg", caption: "Project Oval Team @NCDOT" },
-          { type: "image", src: "qlocPoster.jpg", caption: "QLOC poster presentation at the NCDOT Research and Innovation Symposium 2025" },
+          {
+            type: "image",
+            src: "teamImage.jpeg",
+            caption: "Project Oval Team @NCDOT",
+          },
+          {
+            type: "image",
+            src: "qlocPoster.jpg",
+            caption:
+              "QLOC poster presentation at the NCDOT Research and Innovation Symposium 2025",
+          },
         ],
       },
       {
@@ -108,8 +130,16 @@ const projects = [
       {
         type: "media",
         items: [
-          { type: "image", src: "iEEE3.png", caption: "IEEE IV 2025, Cluj-Napoca, Romania" },
-          { type: "image", src: "iEEE4.png", caption: "IEEE IV 2025, Cluj-Napoca, Romania" },
+          {
+            type: "image",
+            src: "iEEE3.png",
+            caption: "IEEE IV 2025, Cluj-Napoca, Romania",
+          },
+          {
+            type: "image",
+            src: "iEEE4.png",
+            caption: "IEEE IV 2025, Cluj-Napoca, Romania",
+          },
         ],
       },
       {
@@ -122,7 +152,9 @@ const projects = [
           {
             type: "video",
             src: "webapp.mp4",
-            caption: "Telemetry Web App — live GPS location, Google Cloud Pub/Sub data flow, and a live view of the vehicle during an event",
+            fit: "contain",
+            caption:
+              "Telemetry Web App — live GPS location, Google Cloud Pub/Sub data flow, and a live view of the vehicle during an event",
           },
         ],
       },
@@ -161,7 +193,8 @@ const projects = [
       },
       {
         date: "June 22–25, 2025",
-        title: "IEEE Intelligent Vehicles Symposium (IV) 2025 — Cluj-Napoca, Romania",
+        title:
+          "IEEE Intelligent Vehicles Symposium (IV) 2025 — Cluj-Napoca, Romania",
         description: "Presented and published the QLOC paper.",
         link: "https://ieeexplore.ieee.org/document/11097732",
         linkLabel: "Read the QLOC paper",
@@ -170,15 +203,28 @@ const projects = [
   },
   {
     slug: "insight",
-    imagePath: "insight/INSIGHT_System.jpeg",
+    imagePath: "insight/main_image_both_device_walker_wheelchari.jpg",
     title: "INSIGHT",
     sk1: "ROS2",
     sk2: "PID Control",
     sk3: "AWS",
     content: [
       {
+        type: "media",
+        items: [
+          {
+            type: "image",
+            src: "insight/main_image_both_device_walker_wheelchari.jpg",
+            caption:
+              "INSIGHT (Intelligent In-home Safe Halo Gravity Traction) walker and wheelchair devices",
+            fit: "contain",
+
+            },
+        ],
+      },
+      {
         type: "text",
-        html: `<p><strong>INSIGHT (Intelligent In-home Safe Halo Gravity Traction) is a medical device developed jointly by NC State University and UNC Chapel Hill (UNC Health) to make Halo Gravity Traction — the standard pre-surgical treatment for severe adolescent idiopathic scoliosis — safe, precise, and usable outside a hospital.</strong> The project is led by Dr. Gregory Buckner (Distinguished Professor, NCSU Mechanical &amp; Aerospace Engineering) and Sean Zeller, MBA, MSPO, CPO (Director of Prosthetics and Orthotics, UNC Hospitals), with Shaphan Jernigan as lab manager and an undergraduate research team of Cole Malinchock, Will Mueller, Hailey Nguyen, Edward Katz, Emma Brown, and myself.</p>`,
+        html: `<p><strong>INSIGHT (Intelligent In-home Safe Halo Gravity Traction) is a medical device (Provisional Patent) developed jointly by NC State University and UNC Chapel Hill (UNC Health) to make Halo Gravity Traction — the standard pre-surgical treatment for severe adolescent idiopathic scoliosis — safe, precise, and usable outside a hospital.</strong> The project is led by Dr. Gregory Buckner (Distinguished Professor, NCSU Mechanical &amp; Aerospace Engineering) and Sean Zeller, MBA, MSPO, CPO (Director of Prosthetics and Orthotics, UNC Hospitals)`,
       },
       {
         type: "text",
@@ -217,7 +263,8 @@ const projects = [
           {
             type: "image",
             src: "insight/insight_system_architecture-2026-08-16-135905.png",
-            caption: "INSIGHT ROS2 system architecture — hardware, nodes, and topics",
+            caption:
+              "INSIGHT ROS2 system architecture — hardware, nodes, and topics",
             fit: "contain",
           },
         ],
@@ -228,7 +275,8 @@ const projects = [
           {
             type: "image",
             src: "insight/insight_system_architecture-2026-08-16-135951.png",
-            caption: "INSIGHT ROS2 sequence diagram — startup, normal operation, manual mode, e-stop, and shutdown",
+            caption:
+              "INSIGHT ROS2 sequence diagram — startup, normal operation, manual mode, e-stop, and shutdown",
             fit: "contain",
           },
         ],
@@ -236,6 +284,17 @@ const projects = [
       {
         type: "text",
         html: `<p><strong>Safety</strong> was the core design constraint, given this runs on a pediatric medical device. The mechanical fuse went through two generations — a 1st-generation magnetic design (compact, repeatable, but attracted to surrounding metal objects and non-adjustable) and a 2nd-generation mechanical design with an adjustable release threshold (20–60 lbf), repeatable within ±2 lbf, and resettable without tools. That's layered with dual E-stop buttons, anti-tipping wheels, temperature sensors, sensor fault-tolerance, and minimal exposed wiring to reduce entanglement risk. On the validation side, the frame was analyzed in SolidWorks FEA to a structural factor of safety greater than 2.5 against the IEC 60601-1 medical device standard, and the full system passed a 12-hour continuous endurance test with a mean tension error of 0.05 lb (± 0.34 lb std. dev.) and internal temperature staying below 30°C throughout.</p>`,
+      },
+      {
+        type: "media",
+        items: [
+          {
+            type: "image",
+            src: "insight/INSIGHT_System.jpeg",
+            caption: "INSIGHT walker system, labeled",
+            fit: "contain",
+          },
+        ],
       },
       {
         type: "text",
@@ -251,7 +310,8 @@ const projects = [
           {
             type: "image",
             src: "insight/insight_webapp_to_display_data.png",
-            caption: "INSIGHT Analytics — remote tension monitoring for a patient's walker and wheelchair devices",
+            caption:
+              "INSIGHT Analytics — remote tension monitoring for a patient's walker and wheelchair devices",
           },
         ],
       },
@@ -280,7 +340,8 @@ const projects = [
           {
             type: "image",
             src: "insight/Slide2.jpg",
-            caption: "BMES poster: Engineering a Safe, Intelligent Halo Gravity Traction System for Effective Pre-Surgical Outpatient Treatment of Severe Idiopathic Scoliosis",
+            caption:
+              "BMES poster: Engineering a Safe, Intelligent Halo Gravity Traction System for Effective Pre-Surgical Outpatient Treatment of Severe Idiopathic Scoliosis",
           },
         ],
       },
@@ -298,37 +359,44 @@ const projects = [
       {
         date: "June 2023",
         title: "Initial Prototype",
-        description: "Built the first hospital-mounted Halo Gravity Traction rig.",
+        description:
+          "Built the first hospital-mounted Halo Gravity Traction rig.",
       },
       {
         date: "August 2023",
         title: "Electronics & Motor Bench Testing",
-        description: "Bench-top motor control and sensor electronics development.",
+        description:
+          "Bench-top motor control and sensor electronics development.",
       },
       {
         date: "December 2023",
         title: "Mobile App & Tension Display",
-        description: "First mobile interface with a live tension chart and scheduling.",
+        description:
+          "First mobile interface with a live tension chart and scheduling.",
       },
       {
         date: "January 2024",
         title: "Wheelchair System Design",
-        description: "CAD design and structural (FEA) analysis of the wheelchair-mounted system.",
+        description:
+          "CAD design and structural (FEA) analysis of the wheelchair-mounted system.",
       },
       {
         date: "May 2024",
         title: "Wheelchair Prototype",
-        description: "Built and tested the physical wheelchair-mounted prototype.",
+        description:
+          "Built and tested the physical wheelchair-mounted prototype.",
       },
       {
         date: "August 2024",
         title: "Custom PCB & INSIGHT Analytics",
-        description: "Custom control PCB and the first version of the INSIGHT Analytics web dashboard.",
+        description:
+          "Custom control PCB and the first version of the INSIGHT Analytics web dashboard.",
       },
       {
         date: "September 2025",
         title: "BMES 2025",
-        description: "1st Place, Medtronic Design Competition; presented the INSIGHT poster.",
+        description:
+          "1st Place, Medtronic Design Competition; presented the INSIGHT poster.",
       },
       {
         date: "December 2025",
@@ -338,7 +406,8 @@ const projects = [
       {
         date: "February 2026",
         title: "Fully Integrated System",
-        description: "Integrated wheelchair-mounted system with labeled load cells, mechanical fuse, E-stop, and battery/control enclosures.",
+        description:
+          "Integrated wheelchair-mounted system with labeled load cells, mechanical fuse, E-stop, and battery/control enclosures.",
       },
       {
         date: "2026",
@@ -351,24 +420,6 @@ const projects = [
         description: "Presented the INSIGHT poster at EMBC 2026.",
       },
     ],
-  },
-  {
-    slug: "sas-computer-vision-project",
-    imagePath: null,
-    title: "SAS Computer Vision Project",
-    sk1: "Computer Vision",
-    sk2: "ONNX",
-    sk3: "IoT",
-    description: `<p><strong>Placeholder — full write-up coming soon.</strong></p>
-    </br>
-    <p>As a Reliability Engineer for IoT Systems at SAS, I fine-tuned a DETR model with a DINO backbone for richer
-    feature extraction, boosting worker safety in industrial IoT settings, raising F1 to 91% and accuracy to 88%
-    with optimized augmentation, and deployed an RFDETR (ONNX) model in SAS ESP that drove Release 2 adoption.</p>
-    </br>
-    <p>More detail on the architecture, dataset, and deployment pipeline will be added here.</p>`,
-    githubLink: "",
-    websiteLink: "",
-    featured: true,
   },
   {
     slug: "cookbook",
@@ -546,7 +597,8 @@ const projects = [
     </br>
     <p>If you’re curious to see how the robot works, feel free to click the link to the website for a detailed demonstration.</p>
     `,
-    githubLink: "https://github.com/SyntaxErrorThapa/Object_face_detection_rover",
+    githubLink:
+      "https://github.com/SyntaxErrorThapa/Object_face_detection_rover",
     websiteLink: "https://youtu.be/tP2XV6Mckto?si=FJ96s6NSuJzC-5HV",
     featured: false,
   },
