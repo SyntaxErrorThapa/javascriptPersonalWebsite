@@ -4,6 +4,7 @@ import FeaturedProjectCard from "./ProjectComponent/FeaturedProjectCard";
 import projects from "./ProjectComponent/projectsData";
 
 const featuredProjects = projects.filter((p) => p.featured);
+const nonFeaturedProjects = projects.filter((p) => !p.featured);
 
 function Project() {
   return (
@@ -22,9 +23,11 @@ function Project() {
           <h3 className="text-2xl font-bold text-custom-text-charcoal mb-6 text-center">
             Featured Projects
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="flex flex-wrap justify-center gap-8">
             {featuredProjects.map((project) => (
-              <FeaturedProjectCard key={project.slug} {...project} />
+              <div key={project.slug} className="w-full sm:w-[360px]">
+                <FeaturedProjectCard {...project} />
+              </div>
             ))}
           </div>
         </div>
@@ -32,7 +35,7 @@ function Project() {
         {/* Projects grid - simple but more refined */}
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project) => (
+            {nonFeaturedProjects.map((project) => (
               <ProjectBlock
                 key={project.slug}
                 slug={project.slug}

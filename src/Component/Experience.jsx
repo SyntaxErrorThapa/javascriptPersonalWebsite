@@ -7,6 +7,29 @@ function ExperienceTimeline() {
       company: (
         <>
           {/* <RoughHighlight typeBox="box" color="#2E2E2E" strokeWidth={2}> */}
+          IBM
+          {/* </RoughHighlight> */}
+        </>
+      ),
+      role: "Software Developer Intern",
+      location: "Durham, NC",
+      duration: "May 2026 - August 2026",
+      description: [
+        <>
+          Engineered a log ingestion pipeline for IBM Concert on Z to collect and process mainframe logs for the testing team.
+        </>,
+        <>
+          Built a RAG pipeline with LLM-based retrieval over mainframe logs to automate context-aware insight generation.
+        </>,
+        <>
+          Delivered structured log summaries to QA engineers, reducing manual analysis overhead across the IBM Z platform.
+        </>,
+      ],
+    },
+    {
+      company: (
+        <>
+          {/* <RoughHighlight typeBox="box" color="#2E2E2E" strokeWidth={2}> */}
           SAS (Year-Round)
           {/* </RoughHighlight> */}
         </>
