@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 import SkillBox from "../SkillsComponent/SkillBox";
 
 function stripHtml(html) {
-  return html.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
+  return (html || "").replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
 }
 
-function FeaturedProjectCard({ slug, imagePath, title, sk1, sk2, sk3, description }) {
-  const preview = stripHtml(description);
+function FeaturedProjectCard({ slug, imagePath, title, sk1, sk2, sk3, description, content }) {
+  const previewHtml =
+    description || content?.find((block) => block.type === "text")?.html;
+  const preview = stripHtml(previewHtml);
   const truncated = preview.length > 220 ? `${preview.slice(0, 220)}…` : preview;
 
   return (
