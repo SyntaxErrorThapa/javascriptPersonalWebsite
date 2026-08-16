@@ -2,9 +2,11 @@
 // imagePath is a filename inside /public, or null to show a placeholder tile.
 // timeline: [{ date, title, description, link, linkLabel }] — optional, rendered as a vertical timeline.
 // media: [{ type: "image" | "video", src, caption }] — optional, rendered as a clickable gallery below the description.
-// content: [{ type: "text", html }] | [{ type: "media", items: [{ type, src, caption }] }] — optional; when present,
-//   this replaces `description`/`media` and renders text and media interleaved in reading order (images/videos
-//   inline after their paragraph, with the caption directly beneath, click to open in a shared lightbox).
+// content: [{ type: "text", html }] | [{ type: "media", items: [{ type, src, caption, fit }] }] — optional; when
+//   present, this replaces `description`/`media` and renders text and media interleaved in reading order
+//   (images/videos inline after their paragraph, with the caption directly beneath, click to open in a shared
+//   lightbox). fit: "contain" renders the image at its natural aspect ratio with no cropping (for diagrams/
+//   screenshots where losing part of the image would lose information) instead of the default cropped h-64 tile.
 // documents: [{ label, href }] — optional, href is relative to /public (spaces are fine, e.g. "doc/My File.pdf").
 const projects = [
   {
@@ -210,6 +212,28 @@ const projects = [
         </ul>`,
       },
       {
+        type: "media",
+        items: [
+          {
+            type: "image",
+            src: "insight/insight_system_architecture-2026-08-16-135905.png",
+            caption: "INSIGHT ROS2 system architecture — hardware, nodes, and topics",
+            fit: "contain",
+          },
+        ],
+      },
+      {
+        type: "media",
+        items: [
+          {
+            type: "image",
+            src: "insight/insight_system_architecture-2026-08-16-135951.png",
+            caption: "INSIGHT ROS2 sequence diagram — startup, normal operation, manual mode, e-stop, and shutdown",
+            fit: "contain",
+          },
+        ],
+      },
+      {
         type: "text",
         html: `<p><strong>Safety</strong> was the core design constraint, given this runs on a pediatric medical device. The mechanical fuse went through two generations — a 1st-generation magnetic design (compact, repeatable, but attracted to surrounding metal objects and non-adjustable) and a 2nd-generation mechanical design with an adjustable release threshold (20–60 lbf), repeatable within ±2 lbf, and resettable without tools. That's layered with dual E-stop buttons, anti-tipping wheels, temperature sensors, sensor fault-tolerance, and minimal exposed wiring to reduce entanglement risk. On the validation side, the frame was analyzed in SolidWorks FEA to a structural factor of safety greater than 2.5 against the IEC 60601-1 medical device standard, and the full system passed a 12-hour continuous endurance test with a mean tension error of 0.05 lb (± 0.34 lb std. dev.) and internal temperature staying below 30°C throughout.</p>`,
       },
@@ -303,7 +327,7 @@ const projects = [
       },
       {
         date: "September 2025",
-        title: "BMES National Conference",
+        title: "BMES 2025",
         description: "1st Place, Medtronic Design Competition; presented the INSIGHT poster.",
       },
       {
@@ -315,6 +339,16 @@ const projects = [
         date: "February 2026",
         title: "Fully Integrated System",
         description: "Integrated wheelchair-mounted system with labeled load cells, mechanical fuse, E-stop, and battery/control enclosures.",
+      },
+      {
+        date: "2026",
+        title: "BMES 2026",
+        description: "Applied to present at BMES 2026.",
+      },
+      {
+        date: "2026",
+        title: "EMBC 2026",
+        description: "Presented the INSIGHT poster at EMBC 2026.",
       },
     ],
   },

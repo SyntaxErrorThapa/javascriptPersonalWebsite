@@ -26,6 +26,12 @@ function InlineMedia({ items, startIndex, onSelect }) {
                 loop
                 playsInline
               />
+            ) : item.fit === "contain" ? (
+              <img
+                className="w-full h-auto object-contain bg-white"
+                src={`${process.env.PUBLIC_URL}/${item.src}`}
+                alt={item.caption || ""}
+              />
             ) : (
               <img
                 className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
