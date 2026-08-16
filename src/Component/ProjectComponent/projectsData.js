@@ -340,6 +340,7 @@ const projects = [
           {
             type: "image",
             src: "insight/Slide2.jpg",
+            fit: "contain",
             caption:
               "BMES poster: Engineering a Safe, Intelligent Halo Gravity Traction System for Effective Pre-Surgical Outpatient Treatment of Severe Idiopathic Scoliosis",
           },
