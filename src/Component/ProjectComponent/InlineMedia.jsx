@@ -19,7 +19,11 @@ function InlineMedia({ items, startIndex, onSelect }) {
           >
             {item.type === "video" ? (
               <video
-                className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                className={
+                  item.fit === "contain"
+                    ? "w-full h-auto object-contain bg-white"
+                    : "w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                }
                 src={`${process.env.PUBLIC_URL}/${item.src}`}
                 autoPlay
                 muted
