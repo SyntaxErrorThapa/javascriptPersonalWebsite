@@ -26,7 +26,6 @@ const projects = [
       {
         type: "media",
         items: [
-          { type: "video", src: "2project_oval_assets.mp4", caption: "Project Oval in action" },
           { type: "video", src: "3project_oval_assets.mp4", caption: "Project Oval in action" },
         ],
       },
